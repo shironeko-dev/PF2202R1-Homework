@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Ex 2</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .form-sign {
+            width: 40%;
+            background-color: #fffcad;
+            position: absolute;
+        }
+        .form-title {
+            color: #4772f2;
+            background-color: #d5fcd7;
+            position: relative;
+            margin: -10px 10px -10px 10px;
+            text-transform: uppercase;
+        }
+        .left-col {
+            width: 35%;
+            color: #1934aa;
+        }
+        .right-col-sub {
+            padding-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-sign">
+        <div class="form-title">
+            <h1>Đăng ký học viên</h1>
+        </div>
+        <form action="ex2.html">
+            <table>
+                <tr>
+                    <td class="left-col">Họ và tên</td>
+                    <td class="right-col">
+                        <input type="text" name="fullname" size="25" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-col">Ngày sinh</td>
+                    <td class="right-col">
+                        <input type="date" name="birthday" size="15" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-col">Giới tính</td>
+                    <td class="right-col">
+                        <input type="radio" name="gender" >Nam
+                        <input type="radio" name="gender" >Nữ
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-col">Địa chỉ</td>
+                    <td class="right-col">
+                        <textarea name="address" cols="25" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-col">Lớp</td>
+                    <td class="right-col">
+                        <select>
+                            <option value = "  ">-Chọn lớp-</option>
+                            <option>PF2202R1</option>
+                            <option>PF2202R2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-col">Email</td>
+                    <td class="right-col">
+                        <input type="email" name="email" size="20" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-col">Điện thoại</td>
+                    <td class="right-col">
+                        <input type="text" name="phone" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-col"></td>
+                    <td class="right-col-sub">
+                        <input type="submit" value="Đăng ký">
+                        <input type="reset" value="Nhập lại">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

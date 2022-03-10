@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Ex 1</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .form-body {
+            width: 40%;
+            background-color: #fff;
+            position: absolute;
+            border-top: 10px solid #d5feff;
+            border-bottom: 15px solid #d5feff ;
+            border-left: 20px solid #d5feff ;
+            border-right: 20px solid #d5feff;
+        }
+        .form-title {
+            color: #fff;
+            background-color: #ff4c00;
+            position: relative;
+            margin: -15px 5px -15px 5px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .left-col {
+            width: 30%;
+            color: #1934aa;
+            text-align: right;
+        }
+        .right-col {
+            padding-top: 5px;
+        }
+        .right-col-sub {
+            padding: 10px 0 10px 0;
+        }
+        
+    </style>
+</head>
+<body>
+        <div class="form-body">
+            <div class="form-title">
+                <h2>Sở thích của bạn</h2>
+            </div>
+            <form action="ex2.html">
+                <table>
+                    <tr>
+                        <td class="left-col">Họ và tên</td>
+                        <td class="right-col">
+                            <input type="text" name="fullname" size="25" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left-col">Email</td>
+                        <td class="right-col">
+                            <input type="email" name="email" size="15" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left-col">Sở thích</td>
+                        <td class="right-col-checkbox">
+                            <input type="checkbox" name="hobby">Thể thao
+                            <input type="checkbox" name="hobby">Âm nhạc
+                            <input type="checkbox" name="hobby">Đọc sách
+                            <br/>
+                            <input type="checkbox" name="hobby">Lướt web
+                            <input type="checkbox" name="hobby">Chơi game
+                            <input type="checkbox" name="hobby">Điện ảnh
+                            <br/>
+                            <input type="checkbox" name="hobby">Du lịch
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="left-col"></td>
+                        <td class="right-col-sub">
+                            <input type="submit" value="Gửi thông tin">
+                            <input type="reset" value="Nhập lại">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+</body>
+</html>
