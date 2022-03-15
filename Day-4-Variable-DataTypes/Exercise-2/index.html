@@ -4,26 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculate the circumference and area of ​​a circle</title>
+    <title>Calculate circle area</title>
 </head>
 <body>
     <script>
-        const Pi = 3.14159;
-        var r; // bán kính hình tròn
-        var d; // đường kính hình tròn
-        var c; // chu vi hình tròn
-        var s; // diện tích hình tròn
+        const Pi = 3.14159; 
+        var radius = parseFloat(prompt("Nhập bán kính hình tròn: "));
+        var d = 2 * radius; // đường kính       
+        var c = 2 * radius * Math.PI; // chu vi
+        var s = radius * radius * Math.PI; // diện tích
 
-        r = prompt("Nhập bán kính hình tròn: ");
-        d = 2 * r;       
-        c = 2 * r * Pi;
-        s = r * r * Pi;
-
-        document.write("Đường kính hình tròn = " +d);
-        document.write('<br/>')
-        document.write("Chu vi hình tròn = " +c);
-        document.write('<br/>')
-        document.write("Diện tích hình tròn = " +s);
+        document.write("Đường kính = " +d + "<br/>");
+        document.write("Chu vi = " +c.toFixed(1) + "<br/>");
+        document.write("Diện tích = " +s.toFixed(1));
     </script>
 </body>
 </html>

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculate bank interest</title>
 </head>
+
 <body>
     <script>
-        const interestRate = 0.069;
-        var money;
-        var year;
-        var totalMoney;
-        
-        money = prompt("Nhập số tiền cần gửi: ");
-        year = prompt("Nhập số năm muốn gửi: ");
-        totalMoney = money * (1 + interestRate * year);
-        document.write("Tổng số tiền nhận được: " +totalMoney);
+        var amountMoney = parseInt(prompt("Nhập số tiền cần vay: "));
+        var noYear = parseInt(prompt("Nhập số năm: "));
+        var interestRate = parseFloat(prompt("Nhập vào lãi suất: "));
+
+        totalMoney = amountMoney + noYear * (amountMoney * (interestRate / 100));
+        document.write("Tổng tiền phải trả sau " + noYear + " năm là: " +totalMoney + " Triệu VND");
     </script>
 </body>
+
 </html>
