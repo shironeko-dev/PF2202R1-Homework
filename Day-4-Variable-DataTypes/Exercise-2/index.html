@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chu vi, diện tích hình tròn</title>
+</head>
+<body>
+    <script>
+        const Pi = 3.14159;
+        var r; // bán kính hình tròn
+        var d; // đường kính hình tròn
+        var c; // chu vi hình tròn
+        var s; // diện tích hình tròn
+
+        r = prompt("Nhập bán kính hình tròn: ");
+        d = 2 * r;       
+        c = 2 * r * Pi;
+        s = r * r * Pi;
+
+        document.write("Đường kính hình tròn = " +d);
+        document.write('<br/>')
+        document.write("Chu vi hình tròn = " +c);
+        document.write('<br/>')
+        document.write("Diện tích hình tròn = " +s);
+    </script>
+</body>
+</html>
