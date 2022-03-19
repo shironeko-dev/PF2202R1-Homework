@@ -11,18 +11,22 @@
 <body>
     <script>
         var year = parseInt(prompt("Nhập năm: "));
+        var isLeapYear = false;
+
         if (year % 4 == 0) {
             if (year % 100 == 0) {
                 if (year % 400 == 0) {
-                    alert("Năm " + year + " là năm nhuận.");
-                } else {
-                    alert("Năm " + year + " là năm không nhuận");
+                    isLeapYear = true;
                 }
             } else {
-                alert("Năm " + year + " là năm nhuận.");
+                isLeapYear = true;
             }
+        }
+
+        if (isLeapYear) {
+            alert(year + " là năm nhuận");
         } else {
-            alert("Năm " + year + " là năm không nhuận");
+            alert(year + " không phải là năm nhuận");
         }
     </script>
 </body>
