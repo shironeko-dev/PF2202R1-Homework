@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price of fruit</title>
+    <style>
+        .main {
+            width: 200px;
+            height: 300px;
+            background-color: rgba(240, 240, 240, 0.5);
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .fruit-form {
+            font-size: 15px;
+            font-weight: bold;
+            padding: 0 15px;
+        }
+
+        #output {
+            margin-top: 70px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Price of fruit</h1>
+        <form>
+            <select id="priceFruit" class="fruit-form">
+                <option selected>Các loại hoa quả</option>
+                <option value="oi">Ổi</option>
+                <option value="duahau">Dưa hấu</option>
+                <option value="tao">Táo</option>
+                <option value="xoai">Xoài</option>
+                <option value="cam">Cam</option>
+                <option value="chomchom">Chôm chôm</option>
+                <option value="mangcut">Măng cụt</option>
+            </select>
+            <p id="output"></p>
+        </form>
+    </div>
+
+    <script>
+        let fruit = document.getElementById("priceFruit");
+        let outputValue = document.getElementById("output");
+        fruit.addEventListener('change', function () {
+            switch (fruit.value) {
+                case "duahau":
+                case "oi":
+                    outputValue.innerHTML = "20000 VNĐ/kg";
+                    break;
+                case "xoai":
+                case "tao":
+                    outputValue.innerHTML = "30000 VNĐ/kg";
+                    break;
+                case "cam":
+                case "chomchom":
+                    outputValue.innerHTML = "40000 VNĐ/kg";
+                    break;
+                case "mangcut":
+                    outputValue.innerHTML = "50000 VNĐ/kg";
+                    break;
+
+                default:
+                    outputValue.innerHTML = "Hãy chọn lại";
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>
