@@ -5,28 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Check Leap Year</title>
+    <title>Check Leap Year</title>
 </head>
 
 <body>
+    <div id="viewDemo"></div>
     <script>
+        var demo = document.getElementById('viewDemo');
         var year = parseInt(prompt("Nhập năm: "));
-        var isLeapYear = false;
-
         if (year % 4 == 0) {
             if (year % 100 == 0) {
                 if (year % 400 == 0) {
-                    isLeapYear = true;
+                    demo.innerText = year + " is a leap year";
+                } else {
+                    demo.innerText = year + " is NOT a leap year";
                 }
             } else {
-                isLeapYear = true;
+                demo.innerText = year + " is a leap year";
             }
-        }
-
-        if (isLeapYear) {
-            alert(year + " là năm nhuận");
         } else {
-            alert(year + " không phải là năm nhuận");
+            demo.innerText = year + " is NOT a leap year";
         }
     </script>
 </body>

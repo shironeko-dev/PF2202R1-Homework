@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1 - Switch case</title>
+</head>
+
+<body>
+    <script>
+        var browser = prompt("Nhập vào tên trình duyệt!", '');
+        switch (browser) {
+            case 'Edge':
+                alert("Bạn đã có Edge!");
+                break;
+            case 'Chrome':
+            case 'Firefox':
+            case 'Safari':
+            case 'Opera':
+                alert("Được rồi, chúng tôi cũng hỗ trợ các trình duyệt này.");
+                break;
+            default:
+                alert("Chúng tôi hy vọng rằng trang này trông ổn!")
+                break;
+        }
+    </script>
+</body>
+
+</html>
