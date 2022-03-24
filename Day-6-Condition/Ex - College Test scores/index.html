@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Test scores</title>
+    <style>
+        .main {
+            width: 500px;
+            height: 300px;
+            background-color: rgba(240, 240, 240, 0.5);
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .scores-form {
+            margin: 15px 25px;
+        }
+
+        .scores-form .point,
+        .scores-form .main-form {
+            margin: 15px;
+        }
+
+        #output {
+            margin-top: 50px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Tính điểm thi đại học</h1>
+        <form action="" id="scores">
+            <div class="scores-form">
+                <div class="point">
+                    <span>Môn Toán</span>
+                    <input type="text" name="" id="toan">
+                </div>
+                <div class="point">
+                    <span>Môn Văn</span>
+                    <input type="text" name="" id="van">
+                </div>
+                <div class="point">
+                    <span>Môn Anh</span>
+                    <input type="text" name="" id="anh">
+                </div>
+                <div class="main-form">
+                    <span>Khu vực</span>
+                    <select id="area" class="area-form">
+                        <option selected>Chọn Khu vực</option>
+                        <option value="kv1">KV1</option>
+                        <option value="kv2">KV2</option>
+                        <option value="kv2-nt">KV2-NT</option>
+                        <option value="kv3">KV3</option>
+                    </select>
+                </div>
+            </div>
+            <p id="output"></p>
+        </form>
+    </div>
+
+    <script>
+        var toan = document.getElementById("toan");
+        var van = document.getElementById("van");
+        var anh = document.getElementById("anh");
+        var khuvuc = document.getElementById("area");
+        var scores = document.getElementById('scores');
+        var output = document.getElementById("output");
+        scores.addEventListener("change", function () {
+            if (toan.value != '' && van.value != '' && anh.value != '' && khuvuc.value != '0') {
+                t = parseFloat(toan.value);
+                v = parseFloat(van.value);
+                a = parseFloat(anh.value);
+                area = 
+                (khuvuc.value == 'kv1') ? 0.75 : 
+                (khuvuc.value == 'kv2') ? 0.5 : 
+                (khuvuc.value == 'kv2-nt') ? 0.25 : 
+                0;
+                output.innerHTML = "Tổng điểm ĐH khối D của bạn là: " + (t + v + a + area) + " điểm" ;
+            }
+        });
+    </script>
+</body>
+
+</html>
