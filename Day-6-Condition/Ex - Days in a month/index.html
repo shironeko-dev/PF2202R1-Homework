@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Test scores</title>
+    <style>
+        .main {
+            width: 500px;
+            height: 300px;
+            background-color: rgba(240, 240, 240, 0.5);
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        #output {
+            margin-top: 50px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Tính số ngày trong tháng</h1>
+        <form id="daytime">
+            <div class="input-month">
+                <span>Tháng: </span>
+                <input type="text" name="" id="month">
+            </div>
+            <p id="output"></p>
+        </form>
+    </div>
+
+    <script>
+        var month = document.getElementById("month");
+        var daytime = document.getElementById('daytime');
+        var output = document.getElementById("output");
+        daytime.addEventListener("keyup", function () {
+            if (month.value != '') {
+                m = parseInt(month.value);
+                if (m > 0 && m <= 12) {
+                    switch (m) {
+                        case 2:
+                            output.innerHTML = ('28 hoặc 29 ngày');
+                            break;
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            output.innerHTML = ('30 ngày');
+                            break;
+                        default:
+                            output.innerHTML = ('31 ngày');
+                            break;
+                    }
+                } else {
+                    output.innerHTML = ('Không tồn tại tháng này!!!')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
