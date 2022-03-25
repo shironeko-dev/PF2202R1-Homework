@@ -36,56 +36,59 @@
 
 <body>
     <div class="main">
-        <h1>Tính điểm thi đại học</h1>
+        <h1>Tính điểm thi đại học khối D</h1>
         <form action="" id="scores">
             <div class="scores-form">
                 <div class="point">
                     <span>Môn Toán</span>
-                    <input type="text" name="" id="toan">
+                    <input type="number" onchange="modifyInput('toan', this)">
                 </div>
                 <div class="point">
                     <span>Môn Văn</span>
-                    <input type="text" name="" id="van">
+                    <input type="number" onchange="modifyInput('van', this)">
                 </div>
                 <div class="point">
                     <span>Môn Anh</span>
-                    <input type="text" name="" id="anh">
+                    <input type="number" onchange="modifyInput('anh', this)">
                 </div>
                 <div class="main-form">
                     <span>Khu vực</span>
                     <select id="area" class="area-form">
                         <option selected>Chọn Khu vực</option>
-                        <option value="kv1">KV1</option>
-                        <option value="kv2">KV2</option>
-                        <option value="kv2-nt">KV2-NT</option>
-                        <option value="kv3">KV3</option>
+                        <option value="0.75">KV1</option>
+                        <option value="0.5">KV2</option>
+                        <option value="0.25">KV2-NT</option>
+                        <option value="0">KV3</option>
                     </select>
+                    <br />
+                    <br />
+                    <button type="button" onclick="showMessage()">Tính điểm</button>
                 </div>
             </div>
-            <p id="output"></p>
+            <span id="result"></span>
         </form>
     </div>
 
     <script>
-        var toan = document.getElementById("toan");
-        var van = document.getElementById("van");
-        var anh = document.getElementById("anh");
-        var khuvuc = document.getElementById("area");
-        var scores = document.getElementById('scores');
-        var output = document.getElementById("output");
-        scores.addEventListener("change", function () {
-            if (toan.value != '' && van.value != '' && anh.value != '' && khuvuc.value != '0') {
-                t = parseFloat(toan.value);
-                v = parseFloat(van.value);
-                a = parseFloat(anh.value);
-                area = 
-                (khuvuc.value == 'kv1') ? 0.75 : 
-                (khuvuc.value == 'kv2') ? 0.5 : 
-                (khuvuc.value == 'kv2-nt') ? 0.25 : 
-                0;
-                output.innerHTML = "Tổng điểm ĐH khối D của bạn là: " + (t + v + a + area) + " điểm" ;
+        var toan, van, anh;
+        var select = document.getElementById('area');
+        var result = document.getElementById('result');
+        function modifyInput(name, obj) {
+            switch (name) {
+                case 'toan':
+                    toan = parseFloat(obj.value);
+                    break;
+                case 'van':
+                    van = parseFloat(obj.value);
+                    break;
+                case 'anh':
+                    anh = parseFloat(obj.value);
+                    break;
             }
-        });
+        }
+        function showMessage() {
+            result.innerText = (toan + van + anh) + parseFloat(select.value);
+        }
     </script>
 </body>
 

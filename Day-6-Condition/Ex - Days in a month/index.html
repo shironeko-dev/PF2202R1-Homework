@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Test scores</title>
+    <title>Days in a month</title>
     <style>
         .main {
             width: 500px;
@@ -17,8 +17,7 @@
             text-align: center;
         }
 
-        #output {
-            margin-top: 50px;
+        #result {
             font-size: 25px;
             font-weight: bold;
         }
@@ -27,43 +26,45 @@
 
 <body>
     <div class="main">
-        <h1>Tính số ngày trong tháng</h1>
+        <h1>Tính số ngày trong 1 tháng</h1>
         <form id="daytime">
             <div class="input-month">
-                <span>Tháng: </span>
-                <input type="text" name="" id="month">
+                <span>Nhập tháng: </span>
+                <input type="number" id="number" min="1" max="12">
+                <br />
+                <br />
+                <button type="button" id="btn">Check</button>
             </div>
-            <p id="output"></p>
+            <br />
+            <span id="result"></span>
         </form>
     </div>
 
     <script>
-        var month = document.getElementById("month");
-        var daytime = document.getElementById('daytime');
-        var output = document.getElementById("output");
-        daytime.addEventListener("keyup", function () {
-            if (month.value != '') {
-                m = parseInt(month.value);
-                if (m > 0 && m <= 12) {
-                    switch (m) {
-                        case 2:
-                            output.innerHTML = ('28 hoặc 29 ngày');
-                            break;
-                        case 4:
-                        case 6:
-                        case 9:
-                        case 11:
-                            output.innerHTML = ('30 ngày');
-                            break;
-                        default:
-                            output.innerHTML = ('31 ngày');
-                            break;
-                    }
-                } else {
-                    output.innerHTML = ('Không tồn tại tháng này!!!')
-                }
+        var input = document.getElementById('number');
+        var btn = document.getElementById('btn');
+        var result = document.getElementById('result');
+        var inputvalue, resultText;
+        input.onchange = function () {
+            inputvalue = Number(input.value);
+        }
+        btn.onclick = function () {
+            switch (inputvalue) {
+                case 2:
+                    resultText = '28 hoặc 29 ngày'
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    resultText = '30 ngày';
+                    break;
+                default:
+                    resultText = '31 ngày';
+                    break;
             }
-        });
+            result.innerHTML = resultText
+        }
     </script>
 </body>
 
