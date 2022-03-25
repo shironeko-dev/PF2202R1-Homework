@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Amount</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <select name="" id="from-currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="YEN">YEN</option>
+        <option value="VND">VNĐ</option>
+    </select>
+    <select name="" id="to-currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="YEN">YEN</option>
+        <option value="VND">VNĐ</option>
+    </select>
+    <button onclick="convertMoney()">Convert</button>
+    <br />
+    <br />
+    <span id="result"></span>
+
+    <script>
+        var amount = {
+            USD: 1,
+            EUR: 0.91,
+            YEN: 122.16,
+            VND: 22863.50
+        }
+        var input = document.getElementById('input');
+        var inputValue;
+        var result = document.getElementById('result')
+        input.addEventListener('change', function () {
+            inputValue = input.value
+        })
+        function convertMoney() {
+            var fromCurrency = document.getElementById("from-currency").value;
+            var toCurrency = document.getElementById("to-currency").value;
+            var from = amount[toCurrency];
+            var to = amount[fromCurrency];
+            var value = Number(inputValue) * from / to
+            result.innerHTML = inputValue + fromCurrency + " đổi ra " + value + toCurrency
+        }
+    </script>
+</body>
+
+</html>

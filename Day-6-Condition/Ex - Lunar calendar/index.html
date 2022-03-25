@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar calendar</title>
+    <style>
+        .main {
+            width: 500px;
+            height: 300px;
+            background-color: rgba(240, 240, 240, 0.5);
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        #result {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Lunar calendar</h1>
+        <form id="lunar-form">
+            <div class="input-form">
+                <span>Input year: </span>
+                <input type="text" id="year">
+                <br />
+                <br />
+                <button type="button" onclick="btnCheck()">Check</button>
+            </div>
+            <br />
+            <span id="result"></span>
+        </form>
+    </div>
+
+    <script>
+        var year = document.getElementById('year');
+        var result = document.getElementById('result');
+        function btnCheck() {
+            var checkCan = year.value % 10;
+            var checkChi = year.value % 12;
+            var can, chi = '';
+            if (year.value != '') {
+                switch (checkCan) {
+                    case 1:
+                        can = 'Tân'
+                        break;
+                    case 2:
+                        can = 'Nhâm'
+                        break;
+                    case 3:
+                        can = 'Quý'
+                        break;
+                    case 4:
+                        can = 'Giáp'
+                        break;
+                    case 5:
+                        can = 'Ất'
+                        break;
+                    case 6:
+                        can = 'Bính'
+                        break;
+                    case 7:
+                        can = 'Đinh'
+                        break;
+                    case 8:
+                        can = 'Mậu'
+                        break;
+                    case 9:
+                        can = 'Kỷ'
+                        break;
+                    case 0:
+                        can = 'Canh'
+                        break;
+                }
+                switch (checkChi) {
+                    case 1:
+                        chi = 'Dậu'
+                        break;
+                    case 2:
+                        chi = 'Tuất'
+                        break;
+                    case 3:
+                        chi = 'Hợi'
+                        break;
+                    case 4:
+                        chi = 'Tý'
+                        break;
+                    case 5:
+                        chi = 'Sửu'
+                        break;
+                    case 6:
+                        chi = 'Dần'
+                        break;
+                    case 7:
+                        chi = 'Mẹo'
+                        break;
+                    case 8:
+                        chi = 'Thìn'
+                        break;
+                    case 9:
+                        chi = 'Tị'
+                        break;
+                    case 10:
+                        chi = 'Ngọ'
+                        break;
+                    case 11:
+                        chi = 'Mùi'
+                        break;
+                    case 0:
+                        chi = 'Thân'
+                        break;
+                }
+            }
+            result.innerText = (year.value + " là năm " + can + " " + chi);
+        }
+
+    </script>
+</body>
+
+</html>

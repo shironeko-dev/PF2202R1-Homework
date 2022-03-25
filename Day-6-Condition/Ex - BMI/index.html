@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <style>
+        .main {
+            width: 500px;
+            height: 300px;
+            background-color: rgba(240, 240, 240, 0.5);
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .input-month #weight,
+        .input-month #height {
+            margin-top: 15px;
+        }
+
+        #result {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>BMI Check</h1>
+        <form id="check-form">
+            <div class="input-month">
+                <span>Weight (kg): </span>
+                <input type="number" id="weight">
+                <br />
+                <span>Height (m): </span>
+                <input type="number" id="height">
+                <br />
+                <br />
+                <button type="button" id="btn">Check</button>
+            </div>
+            <br />
+            <span id="result"></span>
+        </form>
+    </div>
+
+    <script>
+        var weight = document.getElementById('weight');
+        var height = document.getElementById('height');
+        var btn = document.getElementById('btn');
+        var result = document.getElementById('result');
+        var weightValue, heightValue, resultText;
+        weight.onchange = function () {
+            weightValue = Number(weight.value);
+        }
+        height.onchange = function () {
+            heightValue = Number(height.value);
+        }
+        btn.onclick = function () {
+            var bmi = weightValue / (heightValue * heightValue)
+            if (bmi < 16) {
+                resultText = 'Gầy cấp độ III'
+            } else if (bmi < 17) {
+                resultText = 'Gầy cấp độ II'
+            } else if (bmi < 18.5) {
+                resultText = 'Gầy cấp độ I'
+            } else if (bmi < 25) {
+                resultText = 'Bình thường'
+            } else if (bmi < 30) {
+                resultText = 'Thừa cân'
+            } else if (bmi < 35) {
+                resultText = 'Béo phì cấp độ 1'
+            } else if (bmi < 40) {
+                resultText = 'Béo phì cấp độ 2'
+            } else {
+                resultText = 'Béo phì cấp độ 3'
+            }
+            result.innerHTML = resultText;
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- <script>
+    var height = parseFloat(prompt('Height (m): '))
+    var weight = parseFloat(prompt('Weight (kg): '))
+    var bmi = weight / (height * height)
+    if (bmi > 40) {
+        resultText = 'Béo phì cấp độ III');
+    } else if (bmi >= 35) {
+        resultText = 'Béo phì cấp độ II');
+    } else if (bmi >= 30 && bmi < 35) {
+        resultText = 'Béo phì cấp độ I');
+    } else if (bmi >= 25 && bmi < 30) {
+        resultText = 'Thừa cân');
+    } else if (bmi >= 18.5 && bmi < 25) {
+        resultText = 'Bình thường');
+    } else if (bmi >= 17 && bmi < 18.5) {
+        resultText = 'Gầy cấp độ I');
+    } else if (bmi >= 16 && bmi < 17) {
+        resultText = 'Gầy cấp độ II');
+    } else 
+        resultText = 'Gầy cấp độ III');
+</script> -->
