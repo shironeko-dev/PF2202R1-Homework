@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fibonacci</title>
 </head>
+
 <body>
+    <span id="result"></span>
+    <br/>
+    <span id="resultFib"></span>
     <script>
-        
+        var index = [1, 1];
+        var result = document.getElementById('result');
+        var resultFib = document.getElementById('resultFib');
+        do {
+            var iNum = parseInt(prompt("Nhập một số lớn hơn 2: "));
+        } while (iNum <= 1 || iNum % 1 != 0);
+        while (index.length < iNum && iNum > 2) {
+            index.push(index[index.length - 1] + index[index.length - 2]);
+        }
+        result.innerHTML = "Fibonacci của " + iNum + " là:";
+        resultFib.innerHTML = index;
     </script>
 </body>
+
 </html>

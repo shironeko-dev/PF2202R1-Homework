@@ -13,15 +13,15 @@
 
     <script>
         function play() {
-            let maxLimit = parseInt(prompt('Nhập vào số giới hạn lớn nhất:'));
+            var maxLimit = parseInt(prompt('Nhập vào số giới hạn lớn nhất:'));
             a = Math.floor(Math.random() * maxLimit);
             console.log(a);
-            for (let i = 0; i < 4; i++) {
+            for (var i = 0; i < 4; i++) {
                 if (i == 3) {
                     alert('Hết lượt');
                     break;
                 }
-                let inputNumber = parseInt(prompt('Nhập số muốn đoán:'));
+                var inputNumber = parseInt(prompt('Nhập số muốn đoán:'));
                 if (inputNumber == a) {
                     document.write('Correct!');
                     break;
