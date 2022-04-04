@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6 - 30 num div 7</title>
+</head>
+
+<body>
+    <script>
+        const MAX = 30;
+        const DIV = 7;
+        var sum = 0; 
+        var n = 2;
+        var count = 1;
+        while (true) {
+            if (n % DIV == 0) {
+                sum += n;
+                count++;
+            }
+            if (count == MAX) {
+                break;
+            }
+            n++;
+        }
+        document.write("Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên là: " +sum);
+    </script>
+</body>
+
+</html>

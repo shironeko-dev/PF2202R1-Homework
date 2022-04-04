@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum in the range</title>
+</head>
+<body>
+    <script>
+        var firstNum = parseInt(prompt("Nhập số đầu tiên:"));
+        var lastNum = parseInt(prompt("Nhập số cuối:"));
+        var small, big;
+        if (firstNum <= lastNum) {
+            small = firstNum;
+            big = lastNum;
+        } else {
+            small = lastNum;
+            big = firstNum;
+        }
+        var sum = 0;
+        for (var i = small; i <= big; i++) {      
+            sum += i;   
+        }
+        document.write("Tổng các số từ " +firstNum+ " đến " +lastNum+ " là: " + sum);
+    </script>
+</body>
+</html>

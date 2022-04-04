@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw triangle</title>
+</head>
+
+<body>
+    <script>
+        var num = parseInt(prompt("Nhập 1 số:"));
+        // A
+        for (var i = 1; i <= num; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write("&ast;");
+            }
+            document.write("<br/>");
+        }
+        document.write("<br/>");
+        // B
+        for (var i = 1; i <= num; i++) {
+            for (var j = num; j >= i; j--) {
+                document.write("&ast;");
+            }
+            document.write("<br/>");
+        }
+        document.write("<br/>");
+        // C
+        for (var i = 1; i <= num; i++) {
+            for (var j = 1; j <= num; j++) {
+                if (i + j > num) {
+                    document.write("&ast;");
+                } else {
+                    document.write("&nbsp;&nbsp;");
+                }
+            }
+            document.write("<br/>");
+        }
+        document.write("<br/>");
+        // D
+        for (var i = 1; i <= num; i++) {
+            for (var j = 1; j <= num; j++) {
+                if (j >= i) {
+                    document.write("&ast;");
+                } else {
+                    document.write("&nbsp;&nbsp;");
+                }
+            }
+            document.write("<br/>");
+        }
+    </script>
+</body>
+
+</html>
