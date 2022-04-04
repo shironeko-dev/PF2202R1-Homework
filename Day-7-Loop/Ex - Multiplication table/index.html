@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table (JS)</title>
+    <style>
+        table, tr, td {
+            border: 1px solid rgba(30, 125, 125, 0.3);
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table id="multi-table" width="100%"></table>
+    <script>
+        var table = "<tr>";
+            for (var row = 1; row <= 9; row++) {
+                for (var col = 2; col <= 9; col++) {
+                    table += "<td>" + col + " &times; " + row + " = " + (row * col) + "</td>";
+                }
+                table += "</tr><tr>";
+            }
+            table += "</tr>";
+            document.getElementById('multi-table').innerHTML = table;
+    </script>
+</body>
+</html>
