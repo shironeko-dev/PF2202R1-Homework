@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find max value or min value</title>
+</head>
+<body>
+    <script>
+        // Tìm giá trị lớn nhất (demo)
+        var maxValue = [-3, 5, 1, 3, 2, 10];
+        maxValue.sort(function sorting(a, b) {
+            return b - a;
+        })
+        document.write('Maximum value in array is: ' + maxValue[0] + '<br/><br/>');
+
+        // Tìm giá trị nhỏ nhất (demo)
+        var minValue = [-3, 5, 1, 3, 2, 10];
+        minValue.sort(function sorting(a, b) {
+            return a - b;
+        })
+        document.write('Minimum value in array is: ' + minValue[0]);
+    </script>
+</body>
+</html>

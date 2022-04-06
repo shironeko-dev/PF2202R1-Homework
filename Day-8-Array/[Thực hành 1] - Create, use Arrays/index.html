@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành 1 - Create, use Arrays</title>
+</head>
+
+<body>
+    <h2>Sample Screen:</h2>
+    <input type="number" onkeyup="modifyInput(this)">
+    <button onclick="add()">Add</button>
+    <button onclick="display()">Display</button>
+    <br />
+    <br />
+    <span id="result"></span>
+
+    <script>
+        var numArr = [];
+        var inputNumber;
+        function modifyInput(obj) {
+            inputNumber = parseFloat(obj.value);
+        }
+        function add() {
+            numArr.push(inputNumber);
+        }
+        function display() {
+            var str = '';
+            var result = document.getElementById('result');
+            for (var i = 0; i < numArr.length; i++) {
+                str += '<p>Element ' + i + ' = ' + numArr[i] + '</p>';
+            }
+            result.innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>

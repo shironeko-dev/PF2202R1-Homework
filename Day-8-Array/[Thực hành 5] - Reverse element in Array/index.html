@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse element in Array</title>
+</head>
+
+<body>
+    <!-- Demo cơ bản -->
+    <span id="element"></span>
+    <br />
+    <span id="result"></span>
+    <br />
+    <br />
+
+    <!-- Demo theo learn -->
+    <span id="num"></span>
+    <br />
+    <span id="text"></span>
+
+    <script>
+        // Demo cơ bản
+        var alphabet = ['A', 'B', 'C', 'D', 'E'];
+        document.getElementById('element').innerHTML = ('Element: ' + alphabet);
+        alphabet.reverse();
+        document.getElementById('result').innerHTML = ('Reverse element: ' + alphabet);
+
+        // Demo theo learn
+        var num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var first = 0;
+        var last = num.length - 1;
+        document.getElementById('num').innerHTML = ('Element: ' + num);
+        while (first < last) {
+            var a = num[first];
+            num[first] = num[last];
+            num[last] = a;
+            first++;
+            last--;
+        }
+        document.getElementById('text').innerHTML = ('Reverse element: ' + num);
+    </script>
+</body>
+
+</html>
