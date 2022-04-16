@@ -17,17 +17,17 @@
         }
 
         #display {
-            font-size: 24px;
+            font-size: 35px;
         }
     </style>
 </head>
 
 <body>
     <div class="main">
-        <h3>Caro Basic</h3>
+        <h1>Caro Basic</h1>
         <div id="display"></div>
         <br />
-        <input type="button" value="Change Value" onclick="changeValue()">
+        <button onclick="changeValue()">Change Value</button>
     </div>
 
     <script>
@@ -36,11 +36,9 @@
         var data = '';
         for (var i = 0; i < 5; i++) {
             board[i] = new Array('&Omicron;', '&Omicron;', '&Omicron;', '&Omicron;', '&Omicron;');
-        }
-        for (var i = 0; i < 5; i++) {
             data += "<br/>";
             for (var j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                data += board[i][j] + "&nbsp;";
             }
         }
         display.innerHTML = "<hr/>" + data;
@@ -52,7 +50,7 @@
             for (var i = 0; i < 5; i++) {
                 data += "<br/>";
                 for (var j = 0; j < 5; j++) {
-                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    data += board[i][j] + "&nbsp;";
                 }
             }
             display.innerHTML = "<hr/>" + data;

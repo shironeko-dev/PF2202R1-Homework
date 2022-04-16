@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <button type="button" onclick="add(product)">Add</button>
+    <button type="button" onclick="edit(product)">Edit</button>
+    <button type="button" onclick="del(product)">Delete</button>
+    <h3>Các sản phẩm: </h3>
+    <span id="result"></span>
+ 
+    <script>
+        var product = [];
+        function hienThi(product) {
+            var s = "";
+            for (var i = 0; i < product.length; i++) {
+                s = s + (i + 1) + ". " + product[i] + "<br>";
+            }
+            return s;
+        } 
+
+        function add(product) {
+            var addProduct = prompt("Nhập mặt hàng muốn thêm: ");
+            product.push(addProduct);
+            document.getElementById("result").innerHTML = hienThi(product);
+        }
+
+        function edit(product) {
+            var index = prompt("Nhập số thứ tự muốn sửa: ");
+            var editProduct = prompt("Nhập tên mặt hàng thay thế: ");
+            product[index - 1] = editProduct;
+            document.getElementById("result").innerHTML = hienThi(product);
+        }
+
+        function del(product) {
+            var index = prompt("Nhập số thứ tự muốn xóa: ");
+            product.splice(index - 1, 1);
+            document.getElementById("result").innerHTML = hienThi(product);
+        }
+        document.getElementById("result").innerHTML = hienThi(product);
+    </script>
+</body>
+
+</html>
