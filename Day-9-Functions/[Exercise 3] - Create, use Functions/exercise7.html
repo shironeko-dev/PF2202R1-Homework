@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findMinNum(a, b, c) {
+            if (a <= b && a <= c) {
+                return a;
+            } else if (b <= a && b <= c) {
+                return b;
+            } else return c;
+        }
+        var a = parseFloat(prompt('Nhập số a:'));
+        var b = parseFloat(prompt('Nhập số b:'));
+        var c = parseFloat(prompt('Nhập số c:'));
+        console.log('Số nhỏ nhất là: ' + findMinNum(a, b, c));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ngoiSao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        var chomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        function timSao(tenSao) {
+            for (let i in ngoiSao) {
+                if (ngoiSao[i].toLowerCase() == tenSao.toLowerCase()) {
+                    return chomSao[i];
+                }              
+            }
+            return;
+        }
+
+        var tenSao = prompt('Nhập tên ngôi sao:');
+        var f = timSao(tenSao);
+        if (f != null) {
+            document.write('Chòm sao của ' + tenSao + ' là ' + f);
+        } else {
+            document.write('Không tìm thấy chòm sao của ' + tenSao)
+        }
+    </script>
+</body>
+</html>

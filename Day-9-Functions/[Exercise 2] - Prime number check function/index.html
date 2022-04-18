@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number check function</title>
+</head>
+
+<body>
+    <script>
+        function isCheck(number) {
+            var check = true;
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    check = false;
+                    continue;
+                }
+            }
+            return check;
+        }
+
+        let n = 2;
+        do {
+            if (isCheck(n) == true) {
+                console.log(n);
+            }
+            n++;
+        } while (n < 10000);
+    </script>
+</body>
+
+</html>
