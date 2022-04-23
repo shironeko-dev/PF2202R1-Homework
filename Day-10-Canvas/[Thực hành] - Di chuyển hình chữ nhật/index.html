@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="game" width="800" height="600" style="border: 3px solid #000"></canvas>
+    <script>
+        var gameContext = document.getElementById("game").getContext("2d");
+        var carYPosition = 20;
+        var carXPosition = 20;
+        var carWidth = 150;
+        var carHeight = 100;
+        var gameTopPosition = 0;
+        var gameBottomPosition = 600;
+        var timeLoop = 10;
+        function drawCar() {
+            gameContext.beginPath();
+            gameContext.fillStyle = '#fa4b2a';
+            gameContext.fillRect(carXPosition, carYPosition, carWidth, carHeight);
+        }
+        var yDistance = 1;
+        function moveCar() {
+            gameContext.clearRect(carXPosition, carYPosition, carWidth, carHeight);
+            var isTouchTop = carYPosition < gameTopPosition;
+            var isTouchBottom = carYPosition + carHeight > gameBottomPosition;
+            if (isTouchTop || isTouchBottom) {
+                yDistance = -yDistance;
+            }
+            carYPosition += yDistance;
+            drawCar();
+        }
+        setInterval(moveCar, timeLoop);
+    </script>
+</body>
+
+</html>
