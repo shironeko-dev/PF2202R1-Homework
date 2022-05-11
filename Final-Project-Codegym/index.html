@@ -46,16 +46,18 @@
             <canvas id="canvas" width="500" height="500"></canvas>
             <div class="game-over">
                 <h1>Game Over</h1>
-                <p>Bạn đã xơi <span id="score"></span> con chuột.</p>
+                <p>Bạn đã xơi <span id="score"></span> con chuột.</p>     
                 <button id="btn-play-again">Chơi lại</button>
             </div>
         </div>
         <div class="user-manual">
-            <div id="audio">
-                <audio controls loop autoplay id="music">
+            <h1 style="text-align: right; padding-right: 20px;">Rắn Săn Mồi</h1>
+            <div class="snake">
+                <img src="./assets/media/img/ran.png" alt="">
+            </div>       
+                <audio loop autoplay id="music">
                     <source src="./assets/media/audio/Theme.mp3" type="audio/mpeg">
                 </audio>
-            </div>
         </div>
     </div>
     <script src="./assets/js/game.js"></script>
