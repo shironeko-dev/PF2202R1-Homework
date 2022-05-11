@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Snake Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-manual">
+            <h1><i class="fa fa-gamepad" aria-hidden="true"> Hướng dẫn</i></h1>
+            <div id="text-manual">
+                <p><i class="fa fa-hand-o-right" aria-hidden="true"> Các phím điều khiển</i></p>
+                <i class="fa fa-arrow-up" aria-hidden="true"> Di chuyển lên trên = W</i>
+                <br>
+                <i class="fa fa-arrow-down" aria-hidden="true"> Di chuyển xuống dưới = S</i>
+                <br>
+                <i class="fa fa-arrow-left" aria-hidden="true"> Di chuyển sang trái = A</i>
+                <br>
+                <i class="fa fa-arrow-right" aria-hidden="true"> Di chuyển sang phải = D</i>
+            </div>
+            <div id="text-manual">
+                <p><i class="fa fa-hand-o-right" aria-hidden="true"> Cách chơi</i></p>
+                <p>
+                    <em style="font-weight: bold;">
+                        Người chơi sẽ điều khiển hướng đi con rắn bằng các phím tương ứng ở trên,
+                        làm sao để ăn được nhiều thức ăn và tránh đâm phải tường hoặc tự cắn bản thân, 
+                        nếu không bạn sẽ kết thúc màn game.
+                    </em>
+                </p>
+            </div>
+            <div id="text-manual">
+                <p>
+                    <em style="font-weight: bold;">
+                        Khi kết thúc mỗi màn game, trên màn hình sẽ hiển thị cửa sổ thành tích của mình đạt được.
+                    </em>
+                </p>
+            </div>
+        </div>
+        <div class="canvas">
+            <canvas id="canvas" width="500" height="500"></canvas>
+            <div class="game-over">
+                <h1>Game Over</h1>
+                <p>Bạn đã xơi <span id="score"></span> con chuột.</p>
+                <button id="btn-play-again">Chơi lại</button>
+            </div>
+        </div>
+        <div class="user-manual">
+            <div id="audio">
+                <audio controls loop autoplay id="music">
+                    <source src="./assets/media/audio/Theme.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/game.js"></script>
+    <script src="./assets/js/block.js"></script>
+    <script src="./assets/js/food.js"></script>
+    <script src="./assets/js/snake.js"></script>
+</body>
+
+</html>
