@@ -2,10 +2,9 @@
 const gameOverEle = document.querySelector(".game-over");
 const btnPlayAgain = document.getElementById("btn-play-again");
 const scoreEle = document.getElementById("score");
-var music = document.getElementById("music")
+const music = document.getElementById("music")
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-
 var width = canvas.width;
 var height = canvas.height;
 
@@ -14,6 +13,7 @@ var blockSize = 20;
 var widthInBlocks = width / blockSize;
 var heightInBlocks = height / blockSize;
 
+// Hiển thị điểm trên nền canvas
 function drawScore() {
   ctx.font = "bold 16px Arial";
   ctx.fillStyle = "black";
@@ -29,12 +29,12 @@ function gameOver() {
   clearInterval(interval);
 }
 
-// Chơi lại game
+// Click chơi lại game
 btnPlayAgain.addEventListener("click", function () {
   window.location.reload();
 });
 
-// Điều hướng A,W,D,S
+// Biến điều hướng A,W,D,S
 var directions = {
   65: "left",
   87: "up",
