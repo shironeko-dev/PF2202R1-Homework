@@ -2,7 +2,7 @@
 const gameOverEle = document.querySelector(".game-over");
 const btnPlayAgain = document.getElementById("btn-play-again");
 const scoreEle = document.getElementById("score");
-const music = document.getElementById("music")
+const music = document.getElementById("music");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 var width = canvas.width;
@@ -13,11 +13,18 @@ var blockSize = 20;
 var widthInBlocks = width / blockSize;
 var heightInBlocks = height / blockSize;
 
+// It’s not a bug, it’s a feature
+document.addEventListener('keydown', musicPlay);
+function musicPlay() {
+    document.getElementById("music").play();
+    document.removeEventListener('keydown', musicPlay);
+}
+
 // Hiển thị điểm trên nền canvas
 function drawScore() {
   ctx.font = "bold 16px Arial";
   ctx.fillStyle = "black";
-  ctx.fillText(`Điểm: ${score}`, 10, 20);
+  ctx.fillText(`Score: ${score}`, 10, 20);
 }
 
 // Game over => Hiển thị thông tin điểm người chơi
