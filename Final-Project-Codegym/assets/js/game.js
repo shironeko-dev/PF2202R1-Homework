@@ -2,7 +2,7 @@
 const gameOverEle = document.querySelector(".game-over");
 const btnPlayAgain = document.getElementById("btn-play-again");
 const scoreEle = document.getElementById("score");
-const music = document.getElementById("music")
+var music = document.getElementById("music")
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 

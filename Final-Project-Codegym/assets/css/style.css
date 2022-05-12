@@ -70,8 +70,8 @@ canvas {
 
 .snake{
     position: fixed;
-    top: 70px;
-    right: -60px;
+    top: 100px;
+    right: -5px;
 }
 
 .snake img{
