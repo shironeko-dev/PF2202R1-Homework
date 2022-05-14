@@ -14,7 +14,7 @@ var widthInBlocks = width / blockSize;
 var heightInBlocks = height / blockSize;
 
 // It’s not a bug, it’s a feature
-document.addEventListener('keydown', musicPlay);
+document.addEventListener("keydown", musicPlay);
 function musicPlay() {
     document.getElementById("music").play();
     document.removeEventListener('keydown', musicPlay);
